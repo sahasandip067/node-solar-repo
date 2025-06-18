@@ -35,6 +35,8 @@ jobs:
   docker:
     name: Docker Login
     needs: [unit-testing]
+    permissions: 
+      packages: write #github token will have access to write ghcr packages
     runs-on: ubuntu-latest
     steps:
       - name: checkout
