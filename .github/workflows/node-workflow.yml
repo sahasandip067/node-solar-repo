@@ -28,13 +28,15 @@ jobs:
       with: 
         node-version: ${{matrix.nodejs_version}}
     - name: Install Dependencies
-      run: npm install
+      run: |
+           npm install
+           npm install mocha --save-dev
     - name: Unit Testing
       run: npm test
     - name: Create test result with reporter
       run: |
-            npm install mocha-junit-reporter --save-dev -g
-            mocha --reporter mocha-junit-reporter > test-result.xml
+            npm install mocha-junit-reporter --save-dev
+            npx mocha --reporter mocha-junit-reporter > test-result.xml
     - name: Archive Test Result
       uses: actions/upload-artifact@v4
       with: 
