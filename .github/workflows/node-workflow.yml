@@ -12,6 +12,9 @@ env:
 jobs:
   unit-testing:
     name: Unit Testing
+    defaults:
+      run:
+        working-directory: ./artifact
     strategy:
       matrix: 
         nodejs_version: [18,19,20]
@@ -35,4 +38,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with: 
         name: Mocha-Test-Result #you can provide any name
-        path: test-result.xml
+        path: artifact/test-result.xml
+        if-no-files-found: error
