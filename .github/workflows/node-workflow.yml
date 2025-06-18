@@ -31,6 +31,10 @@ jobs:
       run: npm install
     - name: Unit Testing
       run: npm test
+    - name: Create test result with reporter
+      run: |
+            npm install mocha-junit-reporter --save-dev
+            mocha --reporter mocha-junit-reporter > test-result.xml
     - name: Archive Test Result
       uses: actions/upload-artifact@v4
       with: 
