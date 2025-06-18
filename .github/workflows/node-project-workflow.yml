@@ -30,3 +30,4 @@ jobs:
         name: Mocha-Test-Result #you can provide any name
         path: test-result.xml
         if-no-files-found: error
+        retention-days: 1
