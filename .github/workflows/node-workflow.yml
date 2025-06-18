@@ -12,9 +12,6 @@ env:
 jobs:
   unit-testing:
     name: Unit Testing
-    defaults:
-      run:
-        working-directory: ./artifact
     strategy:
       matrix: 
         nodejs_version: [18,19,20]
