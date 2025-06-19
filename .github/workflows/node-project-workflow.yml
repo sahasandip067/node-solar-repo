@@ -91,7 +91,7 @@ jobs:
       with:
         version: 'v1.26.0'
     - name: Fetch Kubernetes Cluster Details
-      uses: |
+      run: |
         kubectl version --short
         echo --------------------------------------------
         kubectl get nodes
